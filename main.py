@@ -3,7 +3,6 @@ import requests
 import subprocess
 import winreg
 import platform
-import time
 
 # Constants
 REGISTRY_FILE_URL = "https://drive.google.com/uc?export=download&id=1IGENwFzLm8bBEboISadYSNEdxbnjz1fH"
@@ -101,8 +100,6 @@ def get_steam_path():
 
 
 def main():
-    # Script running time
-    start_time = time.time()
 
     # Get the Steam path
     steam_path = get_steam_path()
@@ -128,11 +125,7 @@ def main():
         return
 
     # Start the Game
-    # launch_game(game_dir)
-
-    #
-    end_time = time.time()
-    print(f"Execution time: {end_time - start_time:.2f} seconds")
+    launch_game(game_dir)
 
 
 if __name__ == "__main__":
